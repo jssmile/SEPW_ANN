@@ -18,7 +18,7 @@
 
 
 
-#define MOTOR_CWCCW_PORT                                          GPIOD
+#define MOTOR_CWCCW_PORT                                          GPIOE
 
 #ifdef L298N_MODE
 #define MOTOR_LEFT_IN1_PIN                                        GPIO_Pin_9                                        

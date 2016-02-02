@@ -602,7 +602,6 @@ void parse_EPW_motor_dir(unsigned char DIR_cmd)
 
 void PerformCommand(unsigned char group,unsigned char control_id, unsigned char value)
 {
-	static int actuator_pwm_value = 0;
    if(group == OUT_EPW_CMD){ /*0*/
 		switch ( control_id )
 		{
@@ -613,10 +612,10 @@ void PerformCommand(unsigned char group,unsigned char control_id, unsigned char 
 		        motor_speed_value = value; /*0~10 scale*/
 		        break;
 		    case EPW_ACTUATOR_A :
-		        set_linearActuator_A_cmd(value , actuator_pwm_value); /*the actuator of pwm_value is fixed, value is dir flag.*/
+		        set_linearActuator_A_cmd(value); /*the actuator of pwm_value is fixed, value is dir flag.*/
 		        break;
 		    case EPW_ACTUATOR_B :                
-		        set_linearActuator_B_cmd(value , actuator_pwm_value); /*the actuator of pwm_value is fixed. value is dir flag.*/
+		        set_linearActuator_B_cmd(value); /*the actuator of pwm_value is fixed. value is dir flag.*/
 		        break;
 		    default:
 		        break;
